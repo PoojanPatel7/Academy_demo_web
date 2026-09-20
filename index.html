@@ -762,20 +762,46 @@
                         </div>
                     </div>
 
-                    <!-- Program Select -->
-                    <div class="relative group mb-6">
-                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 ml-1 group-focus-within:text-purple-600 transition">Interested Program *</label>
-                        <div class="relative">
-                            <i class="fa-solid fa-graduation-cap absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-purple-500 transition z-10"></i>
-                            <select required class="w-full pl-12 pr-10 py-4 bg-gray-50 border-2 border-gray-100 text-gray-900 rounded-2xl focus:bg-white focus:ring-4 focus:ring-purple-500/10 focus:border-purple-500 outline-none transition font-medium appearance-none cursor-pointer relative z-0">
-                                <option value="" disabled selected>Select a program...</option>
-                                <option>Foundation (Class 6-8)</option>
-                                <option>Pre-Foundation (Class 9-10)</option>
-                                <option>JEE Target (Engineering)</option>
-                                <option>NEET Target (Medical)</option>
-                                <option>Other / Not Sure Yet</option>
-                            </select>
-                            <i class="fa-solid fa-chevron-down absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"></i>
+                    <!-- Custom Program Dropdown -->
+                    <div class="relative group mb-6" id="custom-dropdown-container">
+                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 ml-1 transition" id="dropdown-label">Interested Program *</label>
+                        
+                        <!-- Hidden input for actual form submission -->
+                        <input type="hidden" id="selected-program" required>
+                        
+                        <!-- Dropdown Trigger Button -->
+                        <div class="relative cursor-pointer" onclick="toggleDropdown(event)">
+                            <i class="fa-solid fa-graduation-cap absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 z-10 transition" id="dropdown-icon"></i>
+                            <div id="dropdown-button" class="w-full pl-12 pr-10 py-4 bg-gray-50 border-2 border-gray-100 text-gray-400 rounded-2xl flex items-center justify-between transition font-medium hover:bg-white hover:border-purple-500 hover:ring-4 hover:ring-purple-500/10">
+                                <span id="dropdown-text" class="select-none">Select a program...</span>
+                                <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300 pointer-events-none" id="dropdown-chevron"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- Dropdown Menu List -->
+                        <div id="dropdown-menu" class="absolute z-50 top-full left-0 mt-2 w-full bg-white border border-gray-100 rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.1)] opacity-0 invisible transform -translate-y-2 transition-all duration-300 overflow-hidden">
+                            <ul class="py-2">
+                                <li class="px-5 py-3 hover:bg-blue-50 cursor-pointer text-gray-700 font-medium transition flex items-center gap-4 group/item" onclick="selectProgram('Foundation (Class 6-8)')">
+                                    <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-sm shadow-sm group-hover/item:scale-110 transition"><i class="fa-solid fa-seedling"></i></div>
+                                    Foundation (Class 6-8)
+                                </li>
+                                <li class="px-5 py-3 hover:bg-emerald-50 cursor-pointer text-gray-700 font-medium transition flex items-center gap-4 group/item" onclick="selectProgram('Pre-Foundation (Class 9-10)')">
+                                    <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-sm shadow-sm group-hover/item:scale-110 transition"><i class="fa-solid fa-leaf"></i></div>
+                                    Pre-Foundation (Class 9-10)
+                                </li>
+                                <li class="px-5 py-3 hover:bg-orange-50 cursor-pointer text-gray-700 font-medium transition flex items-center gap-4 group/item" onclick="selectProgram('JEE Target (Engineering)')">
+                                    <div class="w-10 h-10 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center text-sm shadow-sm group-hover/item:scale-110 transition"><i class="fa-solid fa-microchip"></i></div>
+                                    JEE Target (Engineering)
+                                </li>
+                                <li class="px-5 py-3 hover:bg-purple-50 cursor-pointer text-gray-700 font-medium transition flex items-center gap-4 group/item" onclick="selectProgram('NEET Target (Medical)')">
+                                    <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center text-sm shadow-sm group-hover/item:scale-110 transition"><i class="fa-solid fa-stethoscope"></i></div>
+                                    NEET Target (Medical)
+                                </li>
+                                <li class="px-5 py-3 hover:bg-gray-50 cursor-pointer text-gray-700 font-medium transition flex items-center gap-4 border-t border-gray-100 mt-1 group/item" onclick="selectProgram('Other / Not Sure Yet')">
+                                    <div class="w-10 h-10 rounded-xl bg-gray-200 text-gray-600 flex items-center justify-center text-sm shadow-sm group-hover/item:scale-110 transition"><i class="fa-solid fa-circle-question"></i></div>
+                                    Other / Not Sure Yet
+                                </li>
+                            </ul>
                         </div>
                     </div>
 

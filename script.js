@@ -81,3 +81,78 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Programs Scroll Spy functionality removed.
 });
+
+    // 4. Custom Dropdown Logic
+    window.toggleDropdown = function(e) {
+        if(e) e.stopPropagation();
+        const menu = document.getElementById('dropdown-menu');
+        const chevron = document.getElementById('dropdown-chevron');
+        const button = document.getElementById('dropdown-button');
+        const label = document.getElementById('dropdown-label');
+        const icon = document.getElementById('dropdown-icon');
+        
+        // Toggle visibility and animation classes
+        if (menu.classList.contains('opacity-0')) {
+            // Open
+            menu.classList.remove('opacity-0', 'invisible', '-translate-y-2');
+            chevron.classList.add('rotate-180');
+            button.classList.add('border-purple-500', 'ring-4', 'ring-purple-500/10', 'bg-white');
+            button.classList.remove('bg-gray-50');
+            label.classList.add('text-purple-600');
+            icon.classList.add('text-purple-500');
+            icon.classList.remove('text-gray-400');
+        } else {
+            // Close
+            closeDropdown();
+        }
+    };
+
+    window.closeDropdown = function() {
+        const menu = document.getElementById('dropdown-menu');
+        if (!menu) return;
+        const chevron = document.getElementById('dropdown-chevron');
+        const button = document.getElementById('dropdown-button');
+        const label = document.getElementById('dropdown-label');
+        const icon = document.getElementById('dropdown-icon');
+        
+        menu.classList.add('opacity-0', 'invisible', '-translate-y-2');
+        chevron.classList.remove('rotate-180');
+        
+        // Only remove active styling if nothing is selected yet
+        if(document.getElementById('dropdown-text').innerText === 'Select a program...') {
+            button.classList.remove('border-purple-500', 'ring-4', 'ring-purple-500/10', 'bg-white');
+            button.classList.add('bg-gray-50');
+            label.classList.remove('text-purple-600');
+            icon.classList.remove('text-purple-500');
+            icon.classList.add('text-gray-400');
+        }
+    };
+
+    window.selectProgram = function(programName) {
+        document.getElementById('dropdown-text').innerText = programName;
+        document.getElementById('dropdown-text').classList.remove('text-gray-400');
+        document.getElementById('dropdown-text').classList.add('text-gray-900');
+        document.getElementById('selected-program').value = programName;
+        
+        // Keep purple active styling since an option is selected
+        const button = document.getElementById('dropdown-button');
+        const label = document.getElementById('dropdown-label');
+        const icon = document.getElementById('dropdown-icon');
+        
+        button.classList.add('border-purple-500', 'bg-white');
+        button.classList.remove('bg-gray-50');
+        label.classList.add('text-purple-600');
+        icon.classList.add('text-purple-500');
+        icon.classList.remove('text-gray-400');
+        
+        closeDropdown();
+    };
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        const container = document.getElementById('custom-dropdown-container');
+        if (container && !container.contains(e.target)) {
+            closeDropdown();
+        }
+    });
+
