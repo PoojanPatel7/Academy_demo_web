@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Excellence Academy | Ahmedabad's Premier Institute</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Custom Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        accent: '#fbbf24', // Amber-400
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased selection:bg-primary-500 selection:text-white">
+
+    <!-- Navbar (Floating Pill with Cute Mascot & Hover Drawer) -->
+    <nav id="navbar" class="group fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 transition-all duration-500 bg-white/90 backdrop-blur-xl border border-white/60 shadow-[0_15px_35px_rgba(0,0,0,0.1)] rounded-full px-4 md:px-6 py-2.5">
+        
+        <!-- Cute Sliding Contact Ribbon (Reveals on Hover) -->
+        <div class="absolute -z-10 left-1/2 -translate-x-1/2 top-full -mt-4 pt-4 opacity-0 -translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] pointer-events-none group-hover:pointer-events-auto flex justify-center">
+            <div class="bg-blue-600 text-white px-5 sm:px-8 py-2.5 rounded-b-[1.5rem] shadow-xl flex items-center gap-4 sm:gap-8 whitespace-nowrap text-xs sm:text-sm font-bold border-x border-b border-blue-500/50">
+                <a href="tel:+919876543210" class="flex items-center gap-2 hover:text-yellow-300 transition transform hover:scale-105">
+                    <i class="fa-solid fa-phone-volume text-yellow-400 animate-bounce"></i> +91 98765 43210
+                </a>
+                <a href="mailto:info@apexacademy.in" class="hidden md:flex items-center gap-2 hover:text-yellow-300 transition transform hover:scale-105">
+                    <i class="fa-solid fa-paper-plane text-yellow-400"></i> info@apexacademy.in
+                </a>
+                <span class="hidden lg:flex items-center gap-2 cursor-default">
+                    <i class="fa-solid fa-location-dot text-yellow-400 animate-pulse"></i> SG Highway, Ahmedabad
+                </span>
+            </div>
+        </div>
+
+        <div class="flex justify-between items-center w-full relative z-10">
+            
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-1.5 md:space-x-2 text-lg sm:text-xl md:text-2xl font-serif font-black text-primary-900 group">
+                <i class="fa-solid fa-graduation-cap text-accent text-2xl md:text-3xl transform group-hover:-rotate-12 transition duration-300"></i>
+                <span class="tracking-tight whitespace-nowrap">Apex Academy</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex space-x-8 items-center font-bold text-sm uppercase tracking-wider">
+                <a href="#home" class="text-blue-600 hover:text-blue-800 transition">Home</a>
+                <a href="#about" class="text-gray-600 hover:text-blue-600 transition">About</a>
+                <a href="#programs" class="text-gray-600 hover:text-blue-600 transition">Programs</a>
+                <a href="#features" class="text-gray-600 hover:text-blue-600 transition">Why Us</a>
+                <a href="#testimonials" class="text-gray-600 hover:text-blue-600 transition">Reviews</a>
+            </div>
+
+            <!-- Right Side Action & Mascot -->
+            <div class="flex items-center gap-1 md:gap-4">
+                
+                <!-- Cute Animated CSS Mascot (Apex the Scholar) -->
+                <div class="flex relative w-10 h-10 md:w-12 md:h-12 items-center justify-center cursor-pointer group" title="Hi! I'm Apex, let's study!">
+                    <div class="mascot-body bg-yellow-400 w-8 h-8 md:w-9 md:h-9 rounded-full relative shadow-md border-2 border-yellow-500">
+                        <!-- Eyes -->
+                        <div class="mascot-eye absolute top-2 left-1.5 md:top-2.5 md:left-2 w-1.5 h-1.5 bg-gray-900 rounded-full"></div>
+                        <div class="mascot-eye absolute top-2 right-1.5 md:top-2.5 md:right-2 w-1.5 h-1.5 bg-gray-900 rounded-full"></div>
+                        <!-- Glasses -->
+                        <div class="absolute top-1 left-0.5 md:top-1.5 md:left-1 w-3 h-3 border-2 border-blue-600 rounded-full opacity-80"></div>
+                        <div class="absolute top-1 right-0.5 md:top-1.5 md:right-1 w-3 h-3 border-2 border-blue-600 rounded-full opacity-80"></div>
+                        <div class="absolute top-2.5 left-3 md:top-3 md:left-3.5 w-1.5 h-0.5 bg-blue-600 opacity-80"></div>
+                        <!-- Blushes -->
+                        <div class="absolute top-3.5 left-0.5 md:top-4 md:left-1 w-1.5 h-1 bg-pink-400 rounded-full opacity-60"></div>
+                        <div class="absolute top-3.5 right-0.5 md:top-4 md:right-1 w-1.5 h-1 bg-pink-400 rounded-full opacity-60"></div>
+                        <!-- Mouth -->
+                        <div class="absolute top-4 left-1/2 -translate-x-1/2 md:top-5 w-1.5 h-1.5 bg-red-400 rounded-full group-hover:scale-150 transition-transform"></div>
+                        <!-- Graduation Cap -->
+                        <div class="absolute -top-3 -left-1 md:-top-4 text-gray-800 transform -rotate-12 text-base md:text-lg drop-shadow-sm z-10 group-hover:-translate-y-1 transition-transform">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <!-- Floating Book -->
+                        <div class="mascot-book absolute -bottom-1 -right-2 md:-right-3 text-blue-500 text-sm drop-shadow-md bg-white rounded-full w-4 h-4 md:w-5 md:h-5 flex items-center justify-center border border-gray-100">
+                            <i class="fa-solid fa-book-open text-[8px] md:text-[10px]"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <a href="#contact" class="hidden sm:flex px-5 py-2.5 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-700 shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5 items-center gap-2 text-sm">
+                    Apply Now <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-xl sm:text-2xl text-gray-800 focus:outline-none ml-1 sm:ml-2 p-1 sm:p-2">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Dropdown (Absolute overlay) -->
+        <div id="mobile-menu" class="hidden absolute top-[110%] left-0 w-full bg-white border border-gray-200 shadow-[0_20px_40px_rgba(0,0,0,0.15)] rounded-[2rem] overflow-hidden flex-col z-50">
+            <div class="flex flex-col py-6 px-4 space-y-5 text-center font-bold text-gray-800">
+                <a href="#home" class="mobile-link text-blue-600 text-lg">Home</a>
+                <a href="#about" class="mobile-link hover:text-blue-600 text-lg transition">About</a>
+                <a href="#programs" class="mobile-link hover:text-blue-600 text-lg transition">Programs</a>
+                <a href="#features" class="mobile-link hover:text-blue-600 text-lg transition">Why Us</a>
+                
+                <!-- Contact info in mobile menu (since hover drawer doesn't work well on touch) -->
+                <div class="pt-4 border-t border-gray-100 flex flex-col gap-3 text-sm text-gray-600 font-medium">
+                    <a href="tel:+919876543210" class="flex items-center justify-center gap-2"><i class="fa-solid fa-phone text-blue-500"></i> +91 98765 43210</a>
+                    <a href="mailto:info@apexacademy.in" class="flex items-center justify-center gap-2"><i class="fa-solid fa-envelope text-blue-500"></i> info@apexacademy.in</a>
+                </div>
+                
+                <a href="#contact" class="mobile-link mt-4 px-6 py-3 bg-blue-600 text-white rounded-full mx-auto shadow-lg shadow-blue-200">Apply Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-32 pb-32 min-h-[95vh] flex items-center justify-center overflow-hidden bg-gray-50">
+        
+        <!-- Abstract Graphical Blurs for modern background -->
+        <div class="absolute top-0 right-0 w-[600px] md:w-[800px] h-[600px] md:h-[800px] bg-blue-100 rounded-full blur-[100px] opacity-70 -translate-y-1/2 translate-x-1/3"></div>
+        <div class="absolute bottom-0 left-0 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-yellow-100 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/3 opacity-70"></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col items-center text-center max-w-5xl mx-auto">
+                
+                <!-- Live Badge -->
+                <div class="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-white border border-gray-100 shadow-xl mb-8 animate-fade-in-up transform transition hover:scale-105">
+                    <span class="relative flex h-3 w-3">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                    </span>
+                    <span class="text-gray-900 font-bold tracking-widest text-xs uppercase">Admissions Open 2026-27</span>
+                </div>
+                
+                <!-- Massive Typography -->
+                <h1 class="text-5xl md:text-7xl lg:text-[5.5rem] font-serif font-black text-gray-900 leading-[1.1] tracking-tight mb-8 animate-fade-in-up drop-shadow-sm" style="animation-delay: 0.1s;">
+                    Empowering Minds,<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-indigo-600 relative inline-block">
+                        Shaping The Future
+                        <!-- Decorative Underline -->
+                        <svg class="absolute w-full h-3 md:h-5 -bottom-2 md:-bottom-3 left-0 text-accent opacity-80" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 10 Q 50 0 100 10" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
+                    </span>
+                </h1>
+                
+                <!-- Subtitle -->
+                <p class="text-lg md:text-2xl text-gray-600 mb-12 max-w-3xl leading-relaxed animate-fade-in-up font-light" style="animation-delay: 0.2s;">
+                    Ahmedabad's leading academy dedicated to excellence in education, holistic development, and unparalleled success for your child.
+                </p>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-5 justify-center animate-fade-in-up w-full sm:w-auto" style="animation-delay: 0.3s;">
+                    <a href="#contact" class="group relative px-8 py-4 bg-gray-900 text-white font-bold rounded-full overflow-hidden shadow-2xl transition-all duration-300 hover:shadow-[0_15px_40px_rgba(0,0,0,0.3)] hover:-translate-y-1">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <span class="relative z-10 flex items-center justify-center text-lg">
+                            Book a Campus Tour <i class="fa-solid fa-arrow-right ml-3 group-hover:translate-x-2 transition-transform duration-300"></i>
+                        </span>
+                    </a>
+                    <a href="#programs" class="group px-8 py-4 bg-white border-2 border-gray-200 text-gray-800 font-bold rounded-full hover:border-blue-600 hover:text-blue-600 transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-xl text-lg flex items-center justify-center">
+                        <i class="fa-solid fa-play mr-3 text-blue-600 group-hover:scale-125 transition-transform duration-300"></i> Explore Programs
+                    </a>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-white shadow-[0_-10px_40px_rgba(0,0,0,0.05)] relative z-20 -mt-10 mx-4 md:mx-auto max-w-6xl rounded-2xl">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center px-4">
+            <div class="stat-card">
+                <i class="fa-solid fa-user-graduate text-4xl text-primary-600 mb-3"></i>
+                <h3 class="text-3xl font-bold text-gray-900"><span class="counter" data-target="5000">0</span>+</h3>
+                <p class="text-gray-500 font-medium mt-1">Students Enrolled</p>
+            </div>
+            <div class="stat-card">
+                <i class="fa-solid fa-chalkboard-user text-4xl text-primary-600 mb-3"></i>
+                <h3 class="text-3xl font-bold text-gray-900"><span class="counter" data-target="150">0</span>+</h3>
+                <p class="text-gray-500 font-medium mt-1">Expert Faculty</p>
+            </div>
+            <div class="stat-card">
+                <i class="fa-solid fa-trophy text-4xl text-primary-600 mb-3"></i>
+                <h3 class="text-3xl font-bold text-gray-900"><span class="counter" data-target="98">0</span>%</h3>
+                <p class="text-gray-500 font-medium mt-1">Success Rate</p>
+            </div>
+            <div class="stat-card">
+                <i class="fa-solid fa-award text-4xl text-primary-600 mb-3"></i>
+                <h3 class="text-3xl font-bold text-gray-900"><span class="counter" data-target="15">0</span>+</h3>
+                <p class="text-gray-500 font-medium mt-1">Years of Excellence</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 relative">
+                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop" alt="Students studying" class="rounded-2xl shadow-2xl object-cover h-[500px] w-full">
+                    <div class="absolute -bottom-6 -right-6 bg-primary-700 text-white p-6 rounded-2xl shadow-xl hidden md:block border-4 border-white">
+                        <p class="text-4xl font-bold text-accent mb-1">Top 10</p>
+                        <p class="text-sm font-medium">Ranked Institute in<br>Gujarat</p>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 space-y-6">
+                    <h4 class="text-primary-600 font-semibold tracking-wider uppercase text-sm">About Apex Academy</h4>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 leading-snug">Where Curiosity Meets Opportunity</h2>
+                    <p class="text-gray-600 leading-relaxed text-lg">
+                        Located in the heart of Ahmedabad, Apex Academy provides a transformative educational experience. We go beyond traditional textbook learning to foster critical thinking, creativity, and leadership skills in our students.
+                    </p>
+                    <ul class="space-y-4 mt-6">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-circle-check text-green-500 mt-1 mr-3 text-lg"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Modern Curriculum</h4>
+                                <p class="text-gray-600 text-sm">Aligned with global standards and competitive exam requirements.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-circle-check text-green-500 mt-1 mr-3 text-lg"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Personalized Mentorship</h4>
+                                <p class="text-gray-600 text-sm">Low student-to-teacher ratio ensuring individual attention.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-circle-check text-green-500 mt-1 mr-3 text-lg"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-900">State-of-the-Art Campus</h4>
+                                <p class="text-gray-600 text-sm">Smart classrooms, advanced labs, and extensive sports facilities.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="pt-4">
+                        <a href="#contact" class="inline-flex items-center font-bold text-primary-700 hover:text-primary-900 transition">
+                            Discover our methodology <i class="fa-solid fa-arrow-right ml-2 transition transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section (Full Page Stacking) -->
+    <section id="programs" class="relative">
+        
+        <!-- Intro Header -->
+        <div class="py-24 bg-white relative z-0">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h4 class="text-primary-600 font-semibold tracking-wider uppercase text-sm mb-2">Our Programs</h4>
+                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-gray-900 mb-6">Comprehensive Academic Pathways</h2>
+                    <p class="text-gray-600 text-lg">Tailored programs designed to nurture potential at every educational stage, from foundation building to competitive exam mastery.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Program 1: Foundation (Sticky) -->
+        <div class="sticky top-[4.5rem] h-[calc(100vh-4.5rem)] w-full flex flex-col lg:flex-row bg-white z-10 overflow-hidden group shadow-2xl">
+            <!-- Text Side -->
+            <div class="w-full lg:w-1/2 h-[55%] lg:h-full p-8 lg:p-24 flex flex-col justify-center items-start bg-white z-10 relative">
+                <div class="inline-flex items-center gap-2 bg-blue-100 text-blue-800 text-sm font-bold px-5 py-2 rounded-full mb-6">
+                    <i class="fa-solid fa-seedling"></i> Class 6 to 8
+                </div>
+                <h3 class="text-4xl lg:text-6xl font-serif font-bold text-gray-900 mb-6">Foundation Program</h3>
+                <p class="text-gray-600 text-lg lg:text-xl leading-relaxed mb-8">Building strong core concepts in Mathematics and Science, focusing on analytical skills and conceptual clarity. We train young minds to approach complex problems logically.</p>
+                <ul class="space-y-4 mb-10 hidden md:block">
+                    <li class="flex items-center text-gray-800 font-medium text-lg"><i class="fa-solid fa-check-circle text-blue-500 mr-4 text-2xl"></i> Logical reasoning focus</li>
+                    <li class="flex items-center text-gray-800 font-medium text-lg"><i class="fa-solid fa-check-circle text-blue-500 mr-4 text-2xl"></i> Olympiad preparation</li>
+                    <li class="flex items-center text-gray-800 font-medium text-lg"><i class="fa-solid fa-check-circle text-blue-500 mr-4 text-2xl"></i> Concept visualization</li>
+                </ul>
+                <a href="#contact" class="inline-flex items-center font-bold text-white bg-blue-600 hover:bg-blue-700 transition text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    Explore Foundation <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            <!-- Image Side -->
+            <div class="w-full lg:w-1/2 h-[45%] lg:h-full relative overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover transform transition-transform duration-[10s] group-hover:scale-110" alt="Foundation">
+                <div class="absolute inset-0 bg-blue-900/10"></div>
+            </div>
+        </div>
+
+        <!-- Program 2: Board Excellence (Sticky, Alternating) -->
+        <div class="sticky top-[4.5rem] h-[calc(100vh-4.5rem)] w-full flex flex-col lg:flex-row-reverse bg-gray-50 z-20 overflow-hidden group shadow-[0_-20px_50px_rgba(0,0,0,0.15)]">
+            <!-- Text Side -->
+            <div class="w-full lg:w-1/2 h-[55%] lg:h-full p-8 lg:p-24 flex flex-col justify-center items-start bg-gray-50 z-10 relative">
+                <div class="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 text-sm font-bold px-5 py-2 rounded-full mb-6">
+                    <i class="fa-solid fa-award"></i> Class 9 & 10
+                </div>
+                <h3 class="text-4xl lg:text-6xl font-serif font-bold text-gray-900 mb-6">Board Excellence</h3>
+                <p class="text-gray-600 text-lg lg:text-xl leading-relaxed mb-8">Intensive preparation for board exams alongside early exposure to competitive exam patterns. This critical phase bridges the gap between middle school and advanced studies.</p>
+                <ul class="space-y-4 mb-10 hidden md:block">
+                    <li class="flex items-center text-gray-800 font-medium text-lg"><i class="fa-solid fa-check-circle text-emerald-500 mr-4 text-2xl"></i> Complete NCERT mastery</li>
+                    <li class="flex items-center text-gray-800 font-medium text-lg"><i class="fa-solid fa-check-circle text-emerald-500 mr-4 text-2xl"></i> NTSE targeted coaching</li>
+                    <li class="flex items-center text-gray-800 font-medium text-lg"><i class="fa-solid fa-check-circle text-emerald-500 mr-4 text-2xl"></i> Regular mock exams</li>
+                </ul>
+                <a href="#contact" class="inline-flex items-center font-bold text-white bg-emerald-600 hover:bg-emerald-700 transition text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    Enroll in Boards Prep <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            <!-- Image Side -->
+            <div class="w-full lg:w-1/2 h-[45%] lg:h-full relative overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover transform transition-transform duration-[10s] group-hover:scale-110" alt="Board Students">
+                <div class="absolute inset-0 bg-emerald-900/10"></div>
+            </div>
+        </div>
+
+        <!-- Program 3: JEE/NEET (Sticky) -->
+        <div class="sticky top-[4.5rem] h-[calc(100vh-4.5rem)] w-full flex flex-col lg:flex-row bg-white z-30 overflow-hidden group shadow-[0_-20px_50px_rgba(0,0,0,0.15)]">
+            <!-- Text Side -->
+            <div class="w-full lg:w-1/2 h-[55%] lg:h-full p-8 lg:p-24 flex flex-col justify-center items-start bg-white z-10 relative">
+                <div class="inline-flex items-center gap-2 bg-orange-100 text-orange-800 text-sm font-bold px-5 py-2 rounded-full mb-6">
+                    <i class="fa-solid fa-rocket"></i> Class 11 & 12
+                </div>
+                <h3 class="text-4xl lg:text-6xl font-serif font-bold text-gray-900 mb-6">JEE / NEET Target</h3>
+                <p class="text-gray-600 text-lg lg:text-xl leading-relaxed mb-8">Rigorous coaching by top-tier faculty tailored to crack prestigious engineering and medical entrance exams. Uncompromised dedication to getting you into top colleges.</p>
+                <ul class="space-y-4 mb-10 hidden md:block">
+                    <li class="flex items-center text-gray-800 font-medium text-lg"><i class="fa-solid fa-check-circle text-orange-500 mr-4 text-2xl"></i> Advanced problem solving</li>
+                    <li class="flex items-center text-gray-800 font-medium text-lg"><i class="fa-solid fa-check-circle text-orange-500 mr-4 text-2xl"></i> National level test series</li>
+                    <li class="flex items-center text-gray-800 font-medium text-lg"><i class="fa-solid fa-check-circle text-orange-500 mr-4 text-2xl"></i> Expert doubt resolution</li>
+                </ul>
+                <a href="#contact" class="inline-flex items-center font-bold text-white bg-orange-600 hover:bg-orange-700 transition text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    Join Target Batch <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            <!-- Image Side -->
+            <div class="w-full lg:w-1/2 h-[45%] lg:h-full relative overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover transform transition-transform duration-[10s] group-hover:scale-110" alt="JEE NEET Lab">
+                <div class="absolute inset-0 bg-orange-900/10"></div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Features Section (Modern Bento Box Layout) -->
+    <section id="features" class="py-24 bg-gray-50 relative overflow-hidden scroll-mt-20">
+        
+        <!-- Subtle Background Decals -->
+        <div class="absolute top-0 right-0 w-1/3 h-1/3 bg-blue-100 rounded-full blur-[120px] opacity-60"></div>
+        <div class="absolute bottom-0 left-0 w-1/3 h-1/3 bg-purple-100 rounded-full blur-[120px] opacity-60"></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <!-- Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white border border-blue-100 text-blue-600 font-bold tracking-wider uppercase text-xs mb-6 shadow-sm">
+                    <i class="fa-solid fa-gem text-blue-500 animate-pulse"></i> Why Choose Apex
+                </div>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif font-extrabold text-gray-900 mb-6 tracking-tight leading-tight">
+                    The Apex <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Advantage</span>
+                </h2>
+                <p class="text-gray-600 text-lg md:text-xl leading-relaxed font-light">
+                    Experience a meticulously crafted educational ecosystem designed to elevate learning, foster innovation, and guarantee unparalleled success.
+                </p>
+            </div>
+
+            <!-- Uniform Pastel Grid -->
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Card 1: Smart Classrooms -->
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-[2.5rem] p-10 shadow-[0_10px_40px_rgba(0,0,0,0.03)] border border-blue-100 relative overflow-hidden group hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.06)] transition duration-500 min-h-[300px] flex flex-col justify-center">
+                    <div class="absolute -right-10 -bottom-10 text-blue-200 text-9xl opacity-40 transform group-hover:scale-110 group-hover:-rotate-12 transition duration-500 pointer-events-none">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-400 to-blue-600 text-white flex items-center justify-center text-2xl mb-6 shadow-lg shadow-blue-500/30">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-4">Smart Classrooms</h3>
+                        <p class="text-gray-600 text-lg leading-relaxed max-w-sm">Interactive digital boards and immersive multimedia resources that keep students fully engaged and focused.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: AI Assessments -->
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100/50 rounded-[2.5rem] p-10 shadow-[0_10px_40px_rgba(0,0,0,0.03)] border border-purple-100 relative overflow-hidden group hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.06)] transition duration-500 min-h-[300px] flex flex-col justify-center">
+                    <div class="absolute -right-10 -bottom-10 text-purple-200 text-9xl opacity-40 transform group-hover:scale-110 group-hover:-rotate-12 transition duration-500 pointer-events-none">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-400 to-purple-600 text-white flex items-center justify-center text-2xl mb-6 shadow-lg shadow-purple-500/30">
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-4">AI Assessments</h3>
+                        <p class="text-gray-600 text-lg leading-relaxed max-w-sm">Weekly tests with AI-driven performance analysis and deep analytics to track progress and master weaknesses.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Doubt Solving -->
+                <div class="bg-gradient-to-br from-orange-50 to-orange-100/50 rounded-[2.5rem] p-10 shadow-[0_10px_40px_rgba(0,0,0,0.03)] border border-orange-100 relative overflow-hidden group hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.06)] transition duration-500 min-h-[300px] flex flex-col justify-center">
+                    <div class="absolute -right-10 -bottom-10 text-orange-200 text-9xl opacity-40 transform group-hover:scale-110 group-hover:-rotate-12 transition duration-500 pointer-events-none">
+                        <i class="fa-solid fa-users-rays"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-400 to-orange-600 text-white flex items-center justify-center text-2xl mb-6 shadow-lg shadow-orange-500/30">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-4">24/7 Doubt Solving</h3>
+                        <p class="text-gray-600 text-lg leading-relaxed max-w-sm">Dedicated portals and 1-on-1 offline mentor sessions to ensure no student is ever left behind.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4: Study Material -->
+                <div class="bg-gradient-to-br from-emerald-50 to-emerald-100/50 rounded-[2.5rem] p-10 shadow-[0_10px_40px_rgba(0,0,0,0.03)] border border-emerald-100 relative overflow-hidden group hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.06)] transition duration-500 min-h-[300px] flex flex-col justify-center">
+                    <div class="absolute -right-10 -bottom-10 text-emerald-200 text-9xl opacity-40 transform group-hover:scale-110 group-hover:-rotate-12 transition duration-500 pointer-events-none">
+                        <i class="fa-solid fa-book-open-reader"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 to-emerald-600 text-white flex items-center justify-center text-2xl mb-6 shadow-lg shadow-emerald-500/30">
+                            <i class="fa-solid fa-book"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-4">Study Material</h3>
+                        <p class="text-gray-600 text-lg leading-relaxed max-w-sm">Meticulously curated modules crafted by subject matter experts to cover theory and exhaustive exercises.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action (Spectacular Light Redesign) -->
+    <section class="py-24 bg-white relative overflow-hidden flex items-center justify-center min-h-[70vh]">
+        
+        <!-- Stunning Background Gradients & Grid (Light Mode) -->
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        <div class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-blue-400 opacity-20 blur-[100px] animate-pulse" style="animation-duration: 4s;"></div>
+        <div class="absolute right-0 bottom-0 -z-10 h-[400px] w-[400px] rounded-full bg-yellow-400 opacity-20 blur-[120px] animate-pulse" style="animation-duration: 6s;"></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <!-- Massive Glass Panel -->
+            <div class="max-w-6xl mx-auto rounded-[3rem] p-1 overflow-hidden relative group">
+                
+                <!-- Animated Border Glow (Subtle for light mode) -->
+                <div class="absolute inset-0 bg-gradient-to-r from-blue-300 via-purple-300 to-yellow-300 rounded-[3rem] opacity-0 group-hover:opacity-100 transition duration-1000"></div>
+                
+                <!-- Inner Card -->
+                <div class="relative bg-white/90 backdrop-blur-3xl rounded-[2.9rem] p-8 md:p-16 flex flex-col lg:flex-row items-center gap-12 lg:gap-20 h-full border border-gray-200 shadow-[0_20px_80px_rgba(0,0,0,0.08)]">
+                    
+                    <!-- Left: Typography & Action -->
+                    <div class="w-full lg:w-3/5 text-center lg:text-left">
+                        
+                        <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-red-50 border border-red-200 text-red-600 text-sm font-bold tracking-widest uppercase mb-8 shadow-sm">
+                            <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse shadow-[0_0_10px_rgba(239,68,68,0.5)]"></span>
+                            Live Admissions 2026-27
+                        </div>
+                        
+                        <h2 class="text-5xl md:text-6xl lg:text-[4.5rem] font-serif font-bold text-gray-900 mb-6 leading-[1.1]">
+                            Ready to Secure Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 drop-shadow-sm">Child's Future?</span>
+                        </h2>
+                        
+                        <p class="text-gray-600 text-lg md:text-xl mb-10 font-light leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                            Admissions for the upcoming academic year are filling exceptionally fast. Don't let this opportunity slip away.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start">
+                            <a href="#contact" class="group/btn relative px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-black tracking-wide rounded-full overflow-hidden shadow-[0_10px_30px_rgba(37,99,235,0.3)] hover:shadow-[0_15px_40px_rgba(37,99,235,0.4)] hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3 text-lg border-2 border-blue-500">
+                                <span class="absolute top-0 -left-[100%] w-1/2 h-full block bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[-25deg] group-hover/btn:animate-shine"></span>
+                                Apply for Scholarship Test <i class="fa-solid fa-arrow-right group-hover/btn:translate-x-1 transition-transform"></i>
+                            </a>
+                            <a href="#contact" class="px-8 py-4 bg-white text-gray-800 font-bold rounded-full border-2 border-gray-200 hover:bg-gray-50 hover:border-gray-300 shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center gap-3 text-lg">
+                                <i class="fa-solid fa-download text-gray-500"></i> Download Brochure
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right: Scarcity & Ticket (Light Theme) -->
+                    <div class="w-full lg:w-2/5 flex justify-center lg:justify-end perspective-1000">
+                        
+                        <!-- VIP Pass Widget -->
+                        <div class="bg-gradient-to-b from-gray-50 to-white border border-gray-200 rounded-3xl p-8 w-full max-w-sm shadow-[0_30px_60px_rgba(0,0,0,0.12)] relative overflow-hidden transform lg:rotate-y-[-5deg] hover:rotate-y-0 transition duration-500">
+                            
+                            <!-- Cutouts for ticket look -->
+                            <div class="absolute top-[55%] -left-4 w-8 h-8 bg-white rounded-full -translate-y-1/2 shadow-inner border border-gray-200"></div>
+                            <div class="absolute top-[55%] -right-4 w-8 h-8 bg-white rounded-full -translate-y-1/2 shadow-inner border border-gray-200"></div>
+                            <div class="absolute top-[55%] left-4 right-4 border-t-2 border-dashed border-gray-300 -translate-y-1/2 z-0"></div>
+
+                            <!-- Top Half -->
+                            <div class="pb-8 relative z-10 text-center border-b-2 border-transparent">
+                                <p class="text-gray-500 text-xs font-bold tracking-[0.2em] uppercase mb-4">Available Seats (Batch A)</p>
+                                <div class="text-7xl font-black font-serif text-gray-900 drop-shadow-sm mb-2 flex justify-center items-baseline gap-2">
+                                    <span class="text-3xl text-gray-400 font-sans">0</span>12
+                                </div>
+                                <div class="inline-flex items-center gap-2 bg-red-50 text-red-600 px-4 py-1.5 rounded-full text-sm font-bold animate-pulse mt-2 border border-red-100 shadow-sm">
+                                    <i class="fa-solid fa-fire text-red-500"></i> Only 12 Left!
+                                </div>
+                            </div>
+                            
+                            <!-- Bottom Half -->
+                            <div class="pt-8 relative z-10">
+                                <div class="w-full h-3 bg-gray-200 rounded-full overflow-hidden border border-gray-300 relative mb-4 shadow-inner">
+                                    <div class="h-full bg-gradient-to-r from-red-500 via-orange-400 to-green-500 w-[88%] rounded-full relative overflow-hidden shadow-sm">
+                                        <div class="absolute top-0 bottom-0 left-0 w-[200%] bg-gradient-to-r from-transparent via-white/50 to-transparent animate-shimmer"></div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between text-xs font-bold text-gray-500 uppercase tracking-wider">
+                                    <span>88% Filled</span>
+                                    <span class="text-red-600">Closing Soon</span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hall of Fame & Testimonials Section -->
+    <section id="achievements" class="py-24 bg-gray-50 relative overflow-hidden">
+        
+        <div class="absolute top-0 right-0 w-1/2 h-1/2 bg-yellow-100 rounded-full blur-[150px] opacity-40"></div>
+        <div class="absolute bottom-0 left-0 w-1/2 h-1/2 bg-blue-100 rounded-full blur-[150px] opacity-40"></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white border border-yellow-200 text-yellow-600 font-bold tracking-wider uppercase text-xs mb-6 shadow-sm">
+                    <i class="fa-solid fa-trophy text-yellow-500 animate-pulse"></i> Legacy of Excellence
+                </div>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif font-extrabold text-gray-900 mb-6 tracking-tight leading-tight">
+                    Our <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-500">Hall of Fame</span>
+                </h2>
+                <p class="text-gray-600 text-lg leading-relaxed font-light">
+                    Consistent top ranks, record-breaking selections, and stories of triumph. See why Apex is the undisputed leader in competitive education.
+                </p>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
+                <div class="bg-white rounded-3xl p-6 text-center shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-gray-100 transform hover:-translate-y-1 transition">
+                    <h3 class="text-4xl md:text-5xl font-black text-gray-900 mb-2">150<span class="text-blue-500">+</span></h3>
+                    <p class="text-gray-500 text-sm font-bold uppercase tracking-wide">IIT-JEE Selections</p>
+                </div>
+                <div class="bg-white rounded-3xl p-6 text-center shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-gray-100 transform hover:-translate-y-1 transition">
+                    <h3 class="text-4xl md:text-5xl font-black text-gray-900 mb-2">200<span class="text-purple-500">+</span></h3>
+                    <p class="text-gray-500 text-sm font-bold uppercase tracking-wide">NEET Selections</p>
+                </div>
+                <div class="bg-white rounded-3xl p-6 text-center shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-gray-100 transform hover:-translate-y-1 transition">
+                    <h3 class="text-4xl md:text-5xl font-black text-gray-900 mb-2">Top 10</h3>
+                    <p class="text-gray-500 text-sm font-bold uppercase tracking-wide">State Board Ranks</p>
+                </div>
+                <div class="bg-white rounded-3xl p-6 text-center shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-gray-100 transform hover:-translate-y-1 transition">
+                    <h3 class="text-4xl md:text-5xl font-black text-gray-900 mb-2">99<span class="text-emerald-500">%</span></h3>
+                    <p class="text-gray-500 text-sm font-bold uppercase tracking-wide">Success Rate</p>
+                </div>
+            </div>
+
+            <!-- Best Students (Hall of Fame Cards) -->
+            <h3 class="text-2xl font-bold text-center text-gray-900 mb-10">Stars of Apex (2025-26)</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+                
+                <!-- Student 1 -->
+                <div class="bg-white rounded-[2rem] p-8 text-center shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-gray-100 hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] transition duration-500 relative group transform hover:-translate-y-2">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="inline-flex mb-5">
+                        <span class="bg-blue-50 text-blue-600 px-4 py-1.5 rounded-full text-xs font-black tracking-widest uppercase border border-blue-100">IIT-JEE</span>
+                    </div>
+                    <div class="w-28 h-28 mx-auto rounded-full p-1.5 border border-gray-200 group-hover:border-blue-400 transition duration-500 mb-5 relative">
+                        <img src="https://randomuser.me/api/portraits/men/22.jpg" class="w-full h-full object-cover rounded-full">
+                        <div class="absolute -bottom-2 -right-2 bg-yellow-400 text-white w-8 h-8 rounded-full flex items-center justify-center shadow-md">
+                            <i class="fa-solid fa-medal text-sm"></i>
+                        </div>
+                    </div>
+                    <h4 class="text-2xl font-bold text-gray-900 mb-2">Aarav Mehta</h4>
+                    <div class="inline-flex items-center gap-1.5 bg-yellow-50 text-yellow-700 px-3 py-1 rounded-full text-sm font-bold border border-yellow-200 mb-5">
+                        <i class="fa-solid fa-trophy text-yellow-500"></i> AIR 42
+                    </div>
+                    <p class="text-gray-500 text-sm italic font-light leading-relaxed">"Apex's advanced problem-solving modules were the game-changer."</p>
+                </div>
+
+                <!-- Student 2 (Center Highlight) -->
+                <div class="bg-white rounded-[2rem] p-8 text-center shadow-[0_20px_60px_rgba(0,0,0,0.08)] border border-yellow-100 hover:shadow-[0_30px_80px_rgba(0,0,0,0.12)] transition duration-500 relative group transform md:-translate-y-4 hover:-translate-y-6 z-10">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-1.5 bg-gradient-to-r from-yellow-300 via-purple-500 to-yellow-300 rounded-b-full"></div>
+                    <div class="absolute -top-5 right-4 text-4xl text-yellow-400 drop-shadow-md animate-pulse"><i class="fa-solid fa-crown"></i></div>
+                    
+                    <div class="inline-flex mb-5">
+                        <span class="bg-purple-50 text-purple-600 px-4 py-1.5 rounded-full text-xs font-black tracking-widest uppercase border border-purple-100">NEET</span>
+                    </div>
+                    <div class="w-32 h-32 mx-auto rounded-full p-1.5 border-2 border-yellow-400 group-hover:border-purple-500 transition duration-500 mb-5 relative shadow-[0_0_20px_rgba(234,179,8,0.2)] bg-white">
+                        <img src="https://randomuser.me/api/portraits/women/33.jpg" class="w-full h-full object-cover rounded-full">
+                        <div class="absolute -bottom-2 -right-2 bg-purple-600 text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg border-2 border-white">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <h4 class="text-2xl font-bold text-gray-900 mb-2">Diya Shah</h4>
+                    <div class="inline-flex items-center gap-1.5 bg-gradient-to-r from-yellow-400 to-yellow-500 text-white px-4 py-1.5 rounded-full text-sm font-black shadow-md mb-5">
+                        <i class="fa-solid fa-trophy"></i> AIR 15
+                    </div>
+                    <p class="text-gray-500 text-sm italic font-light leading-relaxed">"The mock test analysis helped me pinpoint my exact weak areas."</p>
+                </div>
+
+                <!-- Student 3 -->
+                <div class="bg-white rounded-[2rem] p-8 text-center shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-gray-100 hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] transition duration-500 relative group transform hover:-translate-y-2">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-gradient-to-r from-transparent via-emerald-500 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="inline-flex mb-5">
+                        <span class="bg-emerald-50 text-emerald-600 px-4 py-1.5 rounded-full text-xs font-black tracking-widest uppercase border border-emerald-100">GUJCET</span>
+                    </div>
+                    <div class="w-28 h-28 mx-auto rounded-full p-1.5 border border-gray-200 group-hover:border-emerald-400 transition duration-500 mb-5 relative">
+                        <img src="https://randomuser.me/api/portraits/men/55.jpg" class="w-full h-full object-cover rounded-full">
+                        <div class="absolute -bottom-2 -right-2 bg-emerald-500 text-white w-8 h-8 rounded-full flex items-center justify-center shadow-md">
+                            <i class="fa-solid fa-award text-sm"></i>
+                        </div>
+                    </div>
+                    <h4 class="text-2xl font-bold text-gray-900 mb-2">Rohan Desai</h4>
+                    <div class="inline-flex items-center gap-1.5 bg-yellow-50 text-yellow-700 px-3 py-1 rounded-full text-sm font-bold border border-yellow-200 mb-5">
+                        <i class="fa-solid fa-trophy text-yellow-500"></i> State Rank 3
+                    </div>
+                    <p class="text-gray-500 text-sm italic font-light leading-relaxed">"Incredible mentors who pushed me to unlock my full potential."</p>
+                </div>
+
+            </div>
+
+            <!-- Parent Testimonials (Minimalist) -->
+            <div class="bg-white rounded-[3rem] p-10 md:p-16 shadow-[0_20px_60px_rgba(0,0,0,0.05)] border border-gray-100">
+                <h3 class="text-2xl font-bold text-center text-gray-900 mb-10">What Parents Say</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    
+                    <div class="relative pl-8">
+                        <div class="absolute left-0 top-0 text-gray-200 text-6xl font-serif leading-none">"</div>
+                        <div class="flex text-yellow-400 text-sm mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 mb-6 font-light leading-relaxed">The faculty at Apex Academy is exceptional. Their focus on concept clarity helped my son secure an AIR under 500 in JEE Advanced. The environment is highly motivating.</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-gray-200 rounded-full overflow-hidden">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-gray-900 text-sm">Rajesh Patel</h5>
+                                <p class="text-xs text-gray-500">Father of Aarav</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8">
+                        <div class="absolute left-0 top-0 text-gray-200 text-6xl font-serif leading-none">"</div>
+                        <div class="flex text-yellow-400 text-sm mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 mb-6 font-light leading-relaxed">As a parent, I value safety and holistic growth as much as academics. Apex provides a perfect balance. The infrastructure in their SG Highway campus is world-class.</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-gray-200 rounded-full overflow-hidden">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-gray-900 text-sm">Meera Desai</h5>
+                                <p class="text-xs text-gray-500">Mother of Class 9 Student</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact & Admissions Form Section (Premium Full-Screen Split) -->
+    <section id="contact" class="relative bg-white flex flex-col lg:flex-row min-h-[90vh] border-t border-gray-100">
+        
+        <!-- Left Side: Copy & Branding -->
+        <div class="lg:w-1/2 relative bg-gray-50 flex flex-col justify-center p-12 lg:p-24 overflow-hidden">
+            <!-- Decorative Elements -->
+            <div class="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:40px_40px] opacity-50"></div>
+            <div class="absolute -top-20 -left-20 w-96 h-96 bg-blue-400 rounded-full blur-[120px] opacity-20"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-400 rounded-full blur-[120px] opacity-20"></div>
+
+            <div class="relative z-10 max-w-lg">
+                <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-blue-100/50 border border-blue-200 text-blue-700 font-bold tracking-wider uppercase text-xs mb-8 shadow-sm">
+                    <i class="fa-solid fa-paper-plane animate-bounce"></i> Admissions Open 2026
+                </div>
+                
+                <h2 class="text-5xl md:text-6xl lg:text-7xl font-serif font-extrabold text-gray-900 mb-6 leading-tight tracking-tight">
+                    Book a <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Campus Tour</span>
+                </h2>
+                
+                <p class="text-gray-500 text-lg md:text-xl leading-relaxed mb-10">
+                    Step into our world-class facility. Have questions? Fill out the form and our expert admissions counselors will reach out to you within two hours.
+                </p>
+
+                <!-- Bullet Points -->
+                <div class="space-y-5">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-white rounded-2xl shadow-sm border border-gray-200 flex items-center justify-center text-blue-600 text-lg">
+                            <i class="fa-solid fa-chalkboard-user"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Expert Counseling</h4>
+                            <p class="text-sm text-gray-500">1-on-1 career guidance sessions.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-white rounded-2xl shadow-sm border border-gray-200 flex items-center justify-center text-purple-600 text-lg">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Campus Walkthrough</h4>
+                            <p class="text-sm text-gray-500">Explore smart labs and classrooms.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: The Form -->
+        <div class="lg:w-1/2 bg-white flex flex-col justify-center p-8 lg:p-24 relative shadow-[-20px_0_40px_rgba(0,0,0,0.02)] z-20">
+            <div class="max-w-xl w-full mx-auto">
+                
+                <h3 class="text-3xl font-bold text-gray-900 mb-8">Send an Inquiry</h3>
+                
+                <form id="contactForm" onsubmit="event.preventDefault(); alert('Inquiry submitted! We will contact you shortly.');">
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <!-- Name Field -->
+                        <div class="relative group">
+                            <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 ml-1 group-focus-within:text-blue-600 transition">Full Name *</label>
+                            <div class="relative">
+                                <i class="fa-solid fa-user absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-blue-500 transition"></i>
+                                <input type="text" required class="w-full pl-12 pr-5 py-4 bg-gray-50 border-2 border-gray-100 text-gray-900 rounded-2xl focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition font-medium placeholder-gray-400" placeholder="e.g. Rahul Sharma">
+                            </div>
+                        </div>
+
+                        <!-- Phone Field -->
+                        <div class="relative group">
+                            <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 ml-1 group-focus-within:text-purple-600 transition">Mobile Number *</label>
+                            <div class="relative">
+                                <i class="fa-solid fa-phone absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-purple-500 transition"></i>
+                                <input type="tel" required class="w-full pl-12 pr-5 py-4 bg-gray-50 border-2 border-gray-100 text-gray-900 rounded-2xl focus:bg-white focus:ring-4 focus:ring-purple-500/10 focus:border-purple-500 outline-none transition font-medium placeholder-gray-400" placeholder="+91 90000 00000">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Email Field -->
+                    <div class="relative group mb-6">
+                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 ml-1 group-focus-within:text-blue-600 transition">Email Address *</label>
+                        <div class="relative">
+                            <i class="fa-solid fa-envelope absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-blue-500 transition"></i>
+                            <input type="email" required class="w-full pl-12 pr-5 py-4 bg-gray-50 border-2 border-gray-100 text-gray-900 rounded-2xl focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition font-medium placeholder-gray-400" placeholder="rahul@example.com">
+                        </div>
+                    </div>
+
+                    <!-- Program Select -->
+                    <div class="relative group mb-6">
+                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 ml-1 group-focus-within:text-purple-600 transition">Interested Program *</label>
+                        <div class="relative">
+                            <i class="fa-solid fa-graduation-cap absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-purple-500 transition z-10"></i>
+                            <select required class="w-full pl-12 pr-10 py-4 bg-gray-50 border-2 border-gray-100 text-gray-900 rounded-2xl focus:bg-white focus:ring-4 focus:ring-purple-500/10 focus:border-purple-500 outline-none transition font-medium appearance-none cursor-pointer relative z-0">
+                                <option value="" disabled selected>Select a program...</option>
+                                <option>Foundation (Class 6-8)</option>
+                                <option>Pre-Foundation (Class 9-10)</option>
+                                <option>JEE Target (Engineering)</option>
+                                <option>NEET Target (Medical)</option>
+                                <option>Other / Not Sure Yet</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"></i>
+                        </div>
+                    </div>
+
+                    <!-- Message Field -->
+                    <div class="relative group mb-10">
+                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 ml-1 group-focus-within:text-blue-600 transition">Additional Message</label>
+                        <div class="relative">
+                            <i class="fa-solid fa-comment-dots absolute left-5 top-5 text-gray-400 group-focus-within:text-blue-500 transition"></i>
+                            <textarea rows="3" class="w-full pl-12 pr-5 py-4 bg-gray-50 border-2 border-gray-100 text-gray-900 rounded-2xl focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition font-medium placeholder-gray-400 resize-none" placeholder="Any specific questions?"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full bg-gray-900 hover:bg-black text-white font-bold text-lg py-5 rounded-2xl transition-all duration-300 shadow-[0_10px_20px_rgba(0,0,0,0.1)] hover:shadow-[0_15px_30px_rgba(0,0,0,0.15)] transform hover:-translate-y-1 flex items-center justify-center gap-3 group/btn">
+                        <span>Submit Inquiry</span>
+                        <i class="fa-solid fa-arrow-right group-hover/btn:translate-x-1 transition-transform"></i>
+                    </button>
+                    
+                    <!-- Trust Badges -->
+                    <div class="mt-8 flex justify-center items-center gap-6 text-xs font-semibold text-gray-400">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-lock text-gray-300"></i> 100% Secure
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-bolt text-yellow-400"></i> Fast Response
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (White Theme with Live Map & Animations) -->
+    <footer class="bg-white relative overflow-hidden pt-20 pb-6 border-t border-gray-200">
+        
+        <!-- Animated Background Orbs (White Theme) -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+            <div class="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-blue-100/60 blur-[120px] animate-[spin_10s_linear_infinite]"></div>
+            <div class="absolute bottom-[0%] -right-[10%] w-[50%] h-[50%] rounded-full bg-purple-100/60 blur-[120px] animate-[spin_15s_linear_infinite_reverse]"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+                
+                <!-- Brand & Map (Col Span 5) -->
+                <div class="col-span-1 md:col-span-5 flex flex-col h-full">
+                    <a href="#" class="flex items-center space-x-3 text-3xl font-serif font-bold text-gray-900 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center text-white shadow-md">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <span>Apex Academy</span>
+                    </a>
+                    <p class="text-gray-500 mb-6 leading-relaxed pr-8">Empowering students in Ahmedabad with world-class education, state-of-the-art facilities, and the right values to shape a brighter tomorrow.</p>
+                    
+                    <!-- Live Location Map (Google Maps iFrame) -->
+                    <div class="w-full h-56 rounded-2xl overflow-hidden shadow-sm border border-gray-200 relative group bg-gray-100 flex-shrink-0">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.6979157243916!2d72.50744921502016!3d23.034861384946764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b4922484cbf%3A0xeab39641d402370!2sSG%20Highway%2C%20Ahmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1698765432100!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="grayscale hover:grayscale-0 transition duration-700"></iframe>
+                        <!-- Subtle tint overlay that disappears on hover for interactivity -->
+                        <div class="absolute inset-0 bg-blue-600/5 pointer-events-none group-hover:bg-transparent transition duration-500"></div>
+                    </div>
+                    <p class="text-xs text-gray-400 mt-3 flex items-center gap-1 font-medium tracking-wide"><i class="fa-solid fa-location-dot text-red-500"></i> SG Highway, Ahmedabad Campus</p>
+                </div>
+                
+                <!-- Quick Links (Col Span 2) -->
+                <div class="col-span-1 md:col-span-2 md:pl-4 mt-2">
+                    <h4 class="text-gray-900 font-bold mb-6 uppercase text-sm tracking-widest flex items-center gap-2"><i class="fa-solid fa-link text-blue-500"></i> Explore</h4>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li><a href="#about" class="text-gray-500 hover:text-blue-600 hover:translate-x-1 inline-block transition transform">About Us</a></li>
+                        <li><a href="#programs" class="text-gray-500 hover:text-blue-600 hover:translate-x-1 inline-block transition transform">Our Programs</a></li>
+                        <li><a href="#features" class="text-gray-500 hover:text-blue-600 hover:translate-x-1 inline-block transition transform">Why Apex</a></li>
+                        <li><a href="#" class="text-gray-500 hover:text-blue-600 hover:translate-x-1 inline-block transition transform">Faculty Profiles</a></li>
+                        <li><a href="#" class="text-gray-500 hover:text-blue-600 hover:translate-x-1 inline-block transition transform">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Student Resources (Col Span 2) -->
+                <div class="col-span-1 md:col-span-2 mt-2">
+                    <h4 class="text-gray-900 font-bold mb-6 uppercase text-sm tracking-widest flex items-center gap-2"><i class="fa-solid fa-user-graduate text-purple-500"></i> Students</h4>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li><a href="#" class="text-gray-500 hover:text-purple-600 hover:translate-x-1 inline-block transition transform">Student Portal</a></li>
+                        <li><a href="#" class="text-gray-500 hover:text-purple-600 hover:translate-x-1 inline-block transition transform">Fee Payment</a></li>
+                        <li><a href="#" class="text-gray-500 hover:text-purple-600 hover:translate-x-1 inline-block transition transform">Calendar</a></li>
+                        <li><a href="#" class="text-gray-500 hover:text-purple-600 hover:translate-x-1 inline-block transition transform">Library</a></li>
+                        <li><a href="#" class="text-gray-500 hover:text-purple-600 hover:translate-x-1 inline-block transition transform">Notice Board</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter & Social (Col Span 3) -->
+                <div class="col-span-1 md:col-span-3 mt-2">
+                    <h4 class="text-gray-900 font-bold mb-6 uppercase text-sm tracking-widest flex items-center gap-2"><i class="fa-solid fa-envelope-open-text text-orange-500"></i> Stay Updated</h4>
+                    <p class="text-sm text-gray-500 mb-5 leading-relaxed">Subscribe to get the latest updates on admissions, scholarship tests, and campus events.</p>
+                    
+                    <div class="flex relative mb-8 group">
+                        <input type="email" placeholder="Enter your email address" class="w-full pl-5 pr-14 py-3.5 bg-gray-50 border border-gray-200 text-gray-900 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm transition group-hover:shadow-md">
+                        <button class="absolute right-1.5 top-1.5 bottom-1.5 aspect-square bg-blue-600 hover:bg-blue-700 rounded-xl text-white transition flex items-center justify-center shadow-sm">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </div>
+
+                    <h4 class="text-gray-900 font-bold mb-4 uppercase text-sm tracking-widest">Follow Us</h4>
+                    <div class="flex space-x-3">
+                        <a href="#" class="w-10 h-10 bg-white border border-gray-200 shadow-sm rounded-full flex items-center justify-center text-gray-500 hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200 transition"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white border border-gray-200 shadow-sm rounded-full flex items-center justify-center text-gray-500 hover:bg-pink-50 hover:text-pink-600 hover:border-pink-200 transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white border border-gray-200 shadow-sm rounded-full flex items-center justify-center text-gray-500 hover:bg-blue-50 hover:text-blue-400 hover:border-blue-200 transition"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white border border-gray-200 shadow-sm rounded-full flex items-center justify-center text-gray-500 hover:bg-red-50 hover:text-red-600 hover:border-red-200 transition"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Copyright -->
+            <div class="border-t border-gray-100 pt-8 pb-2 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2026 Apex Academy, Ahmedabad. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0 font-medium">
+                    <a href="#" class="hover:text-gray-900 transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-gray-900 transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
